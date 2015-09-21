@@ -6,5 +6,8 @@
 </head>
 <body>
 	Hello!
+	<?php
+		echo  'Работает PHP!';
+	?>
 </body>
 </html>
