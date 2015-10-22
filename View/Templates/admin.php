@@ -1,17 +1,20 @@
 <?php ob_start(); ?>
 
+<?php
+	if(isset($_POST['submit'])){
+
+		$add= add_action();
+	}
+?>
+
 <h2>Администрирование странички</h2>
-<form action="index.php/add" method="POST" name="add_date">
+<form action="" method="POST" name="add_data">
 
 <table>
 
 	<tr>
 		<td>Автор:</td>
 		<td><input type="text" name="add_autor"></td>
-	</tr>
-	<tr>
-		<td>Дата:</td>
-		<td><input type="text" name="add_date"></td>
 	</tr>
 	<tr>
 		<td>Заголовок:</td>
@@ -28,8 +31,17 @@
 </table>
 		
 </form>
-
+<h2>Список постов</h2>
+		<ol>
+			<?php foreach ($posts as $post): ?>  <!--определяет, сколько строк (li) будет записано-->
+			<li>
+				<a href="/luik/index.php/show?id=<?php echo $post['id'];?>">  <!--вставляем переменную php-->
+				
+					<?php echo $post['title'];?>
+				</a>
+			</li>
+		<?php endforeach; ?>
+		</ol>
+<?php $content = ob_get_clean() ?> <!--в эту переменную будет все записано -->
+<?php include_once "View/Templates/layout.php";
 		
-
-		<?php $content = ob_get_clean() ?> <!--в эту переменную будет все записано -->
-		<?php  include "View/Templates/layout.php"; ?> <!--вставить файл в html-->

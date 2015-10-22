@@ -3,7 +3,7 @@
 		<ol>
 			<?php foreach ($posts as $post): ?>  <!--определяет, сколько строк (li) будет записано-->
 			<li>
-				<a href="./index.php/show?id=<?php echo $post['ID'];?>">  <!--вставляем переменную php-->
+				<a href="/luik/index.php/show?id=<?php echo $post['id'];?>">  <!--вставляем переменную php-->
 				
 					<?php echo $post['title'];?>
 				</a>
