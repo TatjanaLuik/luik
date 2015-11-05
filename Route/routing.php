@@ -16,10 +16,12 @@
 	elseif('/luik/index.php/show'==$uri){
 		$response=show_action($_REQUEST['id']);
 	}
-	/*elseif('/luik/index.php/add'==$uri) {
-		$response=add_action();
-	}*/
+	
 	elseif('/luik/index.php/about'==$uri) { // если в адресной строке появилась запись
 		$response=about_action(); // вызываем функцию about_action
 	}
-	
+
+	elseif('/luik/index.php/edit'==$uri)  {
+		$id=$_REQUEST['id'];
+		$response=edit_action($id);
+}

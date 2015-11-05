@@ -52,3 +52,17 @@ function add_post(){
 
 	close_database_connection($link);
 }
+function edit_data($id)
+{
+	$autor=$_POST['autor'];
+	$date=date("Y-m-d H:i:s");
+	$title=$_POST['title'];
+	$edit_content=$_POST['content'];
+
+	$link = open_database_connection();
+	$sql= "UPDATE `post` SET `autor` = '$autor', `date` = '$date', `title` = '$title', `content` = '$edit_content' WHERE `id` = '$id';";
+	
+	$add = mysql_query($sql,$link);
+
+	close_database_connection($link);
+}

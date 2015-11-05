@@ -25,23 +25,21 @@ function list_action()
 
 function admin_action(){
 	$posts=get_all_posts();
- 	require "View/Templates/admin.php";
+ 	$html=render_template ("View/Templates/admin.php", array('posts'=>$posts));
+	return $html;
 } // внедрить файл/php
 
 function show_action($id){
 	$posts=get_post($id);
 	$html=render_template('View/Templates/show.php',array('posts'=>$posts));
 	return $html;
-	//require "View/Templates/show.php"; /*внедрить файл*/
+	
 }
 
 function add_action()
 {
 	add_post();
-	/*$posts=get_all_posts();
-	$html=render_template('View/Templates/admin.php',array('posts'=>$posts));
-	return $html;*/
-	//require "View/Templates/admin.php";
+	
 }
 function about_action() // при появлении в адресной строке about внедряем файл about.php
 {	//add_post();
@@ -50,4 +48,10 @@ function about_action() // при появлении в адресной стр�
 	//require "View/Templates/about.php";
 }
 
-		
+function edit_action($id)
+{
+	$posts=get_post($id);
+	$html=render_template('View/Templates/edit.php',array('posts'=>$posts));
+	return $html;	
+
+}	

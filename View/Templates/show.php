@@ -1,5 +1,6 @@
 <?php ob_start(); ?>
 <?php foreach ($posts as $post): ?> <!--начали перебор массива-->
+	
 <h2><?php echo $post['title'];?></h2>
 
 <div>Дата: <?php echo $post['date'];?></div>

@@ -35,10 +35,11 @@
 		<ol>
 			<?php foreach ($posts as $post): ?>  <!--определяет, сколько строк (li) будет записано-->
 			<li>
-				<a href="/luik/index.php/show?id=<?php echo $post['id'];?>">  <!--вставляем переменную php-->
+			<a href="/luik/index.php/show?id=<?php echo $post['id'];?>">  <!--вставляем переменную php-->
 				
-					<?php echo $post['title'];?>
-				</a>
+			<?php echo $post['title'];?>
+			</a> &nbsp;&nbsp;
+			<a href="/luik/index.php/edit?id=<?php echo $post['id'];?>">Редактировать</a>
 			</li>
 		<?php endforeach; ?>
 		</ol>
